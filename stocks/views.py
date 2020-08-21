@@ -10,13 +10,13 @@ def home(request):
     # 이럴때는 파이썬의 예외처리를 적용해준다.
     try:
         ticker = request.GET['ticker']
-        stock_api = requests.get("https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=pk_b901c15ee17e4de29bac4a5422f1668d")
+        stock_api = requests.get("https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=")
         stock = json.loads(stock_api.content)  # json 데이터가 parsing까지 끝내고 파이썬의 딕셔너리 형태로 된다.
 
     except Exception as e: # 빈 데이터를 보여줄 때의 경우; 에러나는 이유
         stock = ""
 
-    #stock_api = requests.get("https://cloud.iexapis.com/stable/stock/AMZN/quote?token=pk_b901c15ee17e4de29bac4a5422f1668d")
+    #stock_api = requests.get("https://cloud.iexapis.com/stable/stock/AMZN/quote?token=")
     # 위의 주소는 하드코딩된 티커값의 주소이기 때문에, 정규표현식으로 바꿔줄 필요가 있다.
 
     content = {'stock':stock} # home.html에서 템플릿 태그 안에 stock으로 써줄 수 있다.
