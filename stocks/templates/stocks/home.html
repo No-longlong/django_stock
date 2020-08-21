@@ -1,0 +1,49 @@
+
+{% extends 'stocks/base.html' %}
+<!--home file을 부르기만 하면 base.html을 다 같이 불러온다.-->
+
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">key</th>
+      <th scope="col">value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">symbol</th>
+      <td>{{ stock.symbol }}</td>
+    </tr>
+    <tr>
+      <th scope="row">companyName</th>
+      <td>{{ stock.companyName }}</td>
+    </tr>
+    <tr>
+      <th scope="row">primaryExchange</th>
+      <td>{{ stock.primaryExchange }}</td>
+    </tr>
+    <tr>
+      <th scope="row">latestPrice</th>
+      <td>{{ stock.latestPrice }}</td>
+    </tr>
+    <tr>
+      <th scope="row">latestTime</th>
+      <td>{{ stock.latestTime }}</td>
+    </tr>
+    <tr>
+      <th scope="row">week52High</th>
+      <td>{{ stock.week52High }}</td>
+    </tr>
+    <tr>
+      <th scope="row">week52Low</th>
+      <td>{{ stock.week52Low }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 템플릿 태그 작성
+view에서 명명한 stock을 사용-->
+
+{% endblock %}
